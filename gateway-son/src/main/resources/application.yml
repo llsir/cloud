@@ -1,0 +1,49 @@
+server:
+  port: ${PORT:8090}
+spring:
+  application:
+    name: gateway-sentinel
+  cloud:
+    gateway:
+      enabled: true
+      discovery:
+        locator:
+          lower-case-service-id: true
+      routes:
+        - id: router-test-client
+          uri: lb://test-client
+          filters:
+            - StripPrefix=1
+          predicates:
+            - Path=/hiapi/**
+        - id: router-feign-client
+          uri: lb://feign-client
+          predicates:
+            - Path=/feignapi/**
+          filters:
+            - StripPrefix=1
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    sentinel:
+      filter:
+        enabled: false
+      transport:
+        dashboard: localhost:8080
+      datasource:
+        ds:
+          nacos:
+            server-addr: localhost:8848
+            data-id: ${spring.application.name}-flow-rules
+            group-id: SENTINEL_GROUP
+            rule-type: GW_FLOW
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+

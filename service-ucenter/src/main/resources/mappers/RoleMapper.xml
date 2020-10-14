@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.boss.ucenter.dao.imp.RoleMapper">
+
+    <resultMap id="roles" type="com.boss.ucenter.entity.dto.RoleExt">
+        <id property="id" column="id"></id>
+        <result property="roleName" column="role_name"></result>
+        <result property="roleCode" column="role_code"></result>
+        <result property="description" column="description"></result>
+        <result property="status" column="r_status"></result>
+        <result property="createTime" column="r_createTime"></result>
+        <collection property="permissions" ofType="com.boss.ucenter.entity.po.Permission" >
+            <id property="id" column="pid"></id>
+            <result property="code" column="p_code"></result>
+            <result property="pId" column="p_id"></result>
+            <result property="menuName" column="menu_name"></result>
+            <result property="isMenu" column="is_menu"></result>
+            <result property="level" column="p_level"></result>
+            <result property="sort" column="sort"></result>
+            <result property="status" column="p_status"></result>
+        </collection>
+    </resultMap>
+
+    <select id="getAllRoles" resultMap="roles" >
+        SELECT
+            r.id id,
+            r.role_name role_name,
+            r.role_code role_code,
+            r.description description,
+            r.status r_status,
+            r.create_time r_createTime,
+            p.id pid,
+            p.CODE p_code,
+            p.p_id p_id,
+            p.menu_name menu_name,
+            p.is_menu is_menu,
+            p.LEVEL p_level,
+            p.sort sort,
+            p.STATUS p_status
+        FROM
+            role r
+            LEFT JOIN role_permission rp ON rp.role_id = r.id
+            LEFT JOIN permission p ON p.id = rp.permission_id
+    </select>
+</mapper>

@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:40400}
+spring:
+  application:
+    name: service-auth
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: ${REDIS_HOST:127.0.0.1}
+    port: ${REDIS_PORT:6379}
+    timeout: 5000 #连接超时 毫秒
+encrypt:
+  key-store:
+    location: classpath:/keystore.jks
+    secret: 123456
+    alias: bosskey
+    password: mypass
+auth:
+  tokenValiditySeconds: 1200  #token存储到redis的过期时间
+  clientId: BossWebApp
+  clientSecret: BossWebApp
+  cookieDomain: 127.0.0.1
+  cookieMaxAge: -1

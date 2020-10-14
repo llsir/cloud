@@ -1,0 +1,26 @@
+server:
+  port: 40500
+spring:
+  application:
+    name: service-logs
+  data:
+    mongodb:
+      uri:  mongodb://127.0.0.1:27017/cloud
+  cloud:
+    stream:
+      bindings:
+        log_input:
+          destination: log.exchange
+          content-type: application/json
+          group: log.queue
+          binder: log_rabbit
+      binders:
+        log_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest

@@ -1,0 +1,20 @@
+main|INFO |2020-07-17 15:20:32 034|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-17 15:23:34 546|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-17 15:25:13 407|com.obs.services.internal.RestStorageService|handleThrowable|295|com.obs.services.internal.ServiceException: Request Error. POST 'https://boss-bucket1.obs.cn-east-3.myhuaweicloud.com/test.avi?uploadId=000001735BA82F679813EF6FDEAEADC5' on Host 'boss-bucket1.obs.cn-east-3.myhuaweicloud.com' @ 'Fri, 17 Jul 2020 07:25:13 GMT' -- ResponseCode: 400, ResponseStatus: Bad Request, XML Error Message: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Error><Code>InvalidPartOrder</Code><Message>The list of parts was not in ascending order. Parts must be ordered by part number.</Message><RequestId>000001735BA9AE5C981346D839B65927</RequestId><HostId>KRa7g385Mwz+D6U6UmGH4SZOKxvwd/KdZRPqroamHwHyNkheEH+AAOkwb4rIHik1</HostId><UploadId>000001735BA82F679813EF6FDEAEADC5</UploadId></Error>
+2020-07-17 15:25:13 408|com.obs.services.ObsClient|doActionWithResult|3944|Storage|1|HTTP+XML|completeMultipartUpload||||2020-07-17 15:25:13|2020-07-17 15:25:13|||400|
+
+main|INFO |2020-07-17 15:26:10 994|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-17 15:32:17 296|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-17 15:32:51 877|com.obs.services.internal.RestStorageService|handleThrowable|295|com.obs.services.internal.ServiceException: Request Error. POST 'https://boss-bucket1.obs.cn-east-3.myhuaweicloud.com/test2.mp4?uploadId=000001735BB029B99416A8E541592837' on Host 'boss-bucket1.obs.cn-east-3.myhuaweicloud.com' @ 'Fri, 17 Jul 2020 07:32:52 GMT' -- ResponseCode: 400, ResponseStatus: Bad Request, XML Error Message: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><Error><Code>InvalidPartOrder</Code><Message>The list of parts was not in ascending order. Parts must be ordered by part number.</Message><RequestId>000001735BB0AD48941637397C981107</RequestId><HostId>SshUJrwku6ggmvoDz9V8KckgyzYIq1L/reh8sYKDnKPtPKsx7dehkyll9kquiDFn</HostId><UploadId>000001735BB029B99416A8E541592837</UploadId></Error>
+2020-07-17 15:32:51 878|com.obs.services.ObsClient|doActionWithResult|3944|Storage|1|HTTP+XML|completeMultipartUpload||||2020-07-17 15:32:51|2020-07-17 15:32:51|||400|
+
+main|INFO |2020-07-17 15:33:46 595|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-17 15:37:19 667|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
+main|INFO |2020-07-21 15:52:11 053|com.obs.services.ObsClient|init|253|[OBS SDK Version=3.20.6.1];[Endpoint=https://obs.cn-east-3.myhuaweicloud.com:443/];[Access Mode=Virtul Hosting]
+
